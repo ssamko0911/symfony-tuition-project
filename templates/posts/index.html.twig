@@ -4,7 +4,15 @@
 
     <div>
         <h2>All posts:</h2>
-        {{ posts }}
+        {% if posts|length > 0 %}
+            {% for post in posts %}
+                <div>
+                    {{ post }}
+                </div>
+            {% endfor %}
+        {% else %}
+            There's nothing yet!
+        {% endif %}
     </div>
 
 {% endblock %}

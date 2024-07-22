@@ -18,7 +18,7 @@ class PostController extends AbstractController
     public function index(int $limit): Response
     {
         return $this->render('posts/index.html.twig', [
-            'posts' => implode(', ', array_slice($this->posts, 0, $limit)),
+            'posts' => array_slice($this->posts, 0, $limit),
         ]);
     }
 
